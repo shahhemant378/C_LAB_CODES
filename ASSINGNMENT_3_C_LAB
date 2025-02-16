@@ -1,0 +1,58 @@
+/*Date : 12/02/2025 Wednesday      ASSIGNMENT 4                                       WEEK 6
+(Array some Array Operation)
+
+
+Q1. Design an array of Size 10. Take the user input. 
+Q2. On the Array above : Find the largest number.
+Q3. On the Array above : Find the smallest number.
+Q4. On the Array above : Find the index of the smallest number
+Q5. On the Array above: Find the index of the largest number.
+Q6.  On the Array above: Find the sum of the data present in the array.
+Q7.  On the Array above: Find the sum of the largest and smallest elements.
+Q8.  On the Array above: Find index of the first even number.*/
+
+//revision14.c
+//Assignment_4 Array_Question Question :6
+#include<stdio.h>
+void main(){
+int arr[10];
+int largest=arr[0],smallest=arr[9],index_smallest=9,index_largest=0,sum=0,index,i;
+
+    for(i=0;i<10;i++){
+            printf("Enter the %d number",i);
+            scanf("%d",&arr[i]);
+    }
+    int c=1;
+    for(i=0;i<10;i++){
+            if(largest<arr[i]){     //finding largest number and its index
+            largest=arr[i];
+            index_largest=i;
+            }
+            
+            if(smallest>arr[i]){    //finding smallest number and its index
+            smallest=arr[i];
+            index_smallest=i;
+            }
+            
+            sum=sum+arr[i]; //finding sum of all elements in array
+            
+            if(arr[i]%2==0){        //checking for the first even number and noting for the index
+            if(c==1)
+             index=i;
+             c++;
+            }
+           
+    }
+    
+    printf("\n\nThe largest number is %d\n",largest);
+    printf("The smallest number is %d\n",smallest);
+    printf("The index of the smallest number is %d\n",index_smallest);
+    printf("The index of the largest number is %d\n",index_largest);
+    printf("The sum of the data present in the array is %d\n",sum);
+    printf("The sum of the largest and the smallest elements are %d\n", largest+smallest);
+    printf("The index of the first even number is %d",index);
+    
+}
+
+
+
