@@ -16,12 +16,13 @@ Q8.  On the Array above: Find index of the first even number.*/
 #include<stdio.h>
 void main(){
 int arr[10];
-int largest=arr[0],smallest=arr[9],index_smallest=9,index_largest=0,sum=0,index,i;
+int index_smallest=9,index_largest=0,sum=0,index,i;
 
     for(i=0;i<10;i++){
             printf("Enter the %d number",i);
             scanf("%d",&arr[i]);
     }
+ int largest=arr[0],smallest=arr[9];
     int c=1;
     for(i=0;i<10;i++){
             if(largest<arr[i]){     //finding largest number and its index
@@ -51,6 +52,7 @@ int largest=arr[0],smallest=arr[9],index_smallest=9,index_largest=0,sum=0,index,
     printf("The sum of the data present in the array is %d\n",sum);
     printf("The sum of the largest and the smallest elements are %d\n", largest+smallest);
     printf("The index of the first even number is %d",index);
+}
     
 }
 
