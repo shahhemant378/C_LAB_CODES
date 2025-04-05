@@ -70,7 +70,7 @@ int main() {
 
  
   
-printf("Sum of the digits (up ot  single digit) of %d = %d",n,sumUpToSingleDigit(n));
+printf("Sum of the digits (up to  single digit) of %d = %d",n,sumUpToSingleDigit(n));
 
     return 0;
 }
