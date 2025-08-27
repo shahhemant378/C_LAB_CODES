@@ -1,4 +1,4 @@
-//find the nth node from the end of the Linked List.
+//2)find the nth node from the end of the Linked List.
 #include<stdio.h>
 #include<stdlib.h>
 struct Node{

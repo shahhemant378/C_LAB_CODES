@@ -103,5 +103,4 @@ void main(){
     head=delete(head,pos,sizeIntermsOfIndex(head));
     print(head);
 
-
 }
