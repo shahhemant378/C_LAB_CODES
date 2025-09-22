@@ -1,16 +1,44 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int** addSparseMatrix(int** m1,int** c2,int c2ColSize){
-    int c;
-    for(c=0;c<c2ColSize;c++){
-        int row=c2[0][c];
-        int col=c2[1][c];
-        int value=c2[2][c];
+// int** addSparseMatrix(int** m1,int** c2,int c2ColSize){
+//     int c;
+//     for(c=0;c<c2ColSize;c++){
+//         int row=c2[0][c];
+//         int col=c2[1][c];
+//         int value=c2[2][c];
 
-        m1[row][col]+=value;
+//         m1[row][col]+=value;
+//     }
+//     return m1;
+// }
+
+int** addSparseMatrix(int **c1Arr,int **c2Arr,int c1ColSize,int c2ColSize,int M1RowSize,int M1ColSize){
+    int **result=(int**)malloc(M1RowSize*sizeof(int*));
+    int i;
+    for(i=0;i<M1RowSize;i++){
+        result[i]=(int*)malloc(M1ColSize*sizeof(int));
+
     }
-    return m1;
+    int j;
+    for(i=0;i<M1RowSize;i++){
+        for(j=0;j<M1ColSize;j++){
+            result[i][j]=0;
+        }
+    }
+    for(i=0;i<c1ColSize;i++){
+        int Row=c1Arr[0][i];
+        int Col=c1Arr[1][i];
+        int Val=c1Arr[2][i];
+        result[Row][Col]=Val;
+    }
+     for(i=0;i<c2ColSize;i++){
+        int Row=c2Arr[0][i];
+        int Col=c2Arr[1][i];
+        int Val=c2Arr[2][i];
+        result[Row][Col]+=Val;
+    }
+    return result;
 }
 
 int countMatrixSize(int** mat,int rowSize,int colSize){
@@ -98,8 +126,10 @@ int mat2ColSize=5;
 int** mat1=createStatictoDynamic(arr1,mat1RowSize,mat1ColSize);
 int** mat2=createStatictoDynamic(arr2,mat2RowSize,mat2ColSize);
 
-int comColSize=countMatrixSize(mat2,mat2RowSize,mat2ColSize);
-int** comArr=createCompactArr(mat2,mat2RowSize,mat2ColSize,comColSize);
-int** Result=addSparseMatrix(mat1,comArr,comColSize);
-print(mat1,mat2RowSize, mat2ColSize);
+int com2ColSize=countMatrixSize(mat2,mat2RowSize,mat2ColSize);
+int com1ColSize=countMatrixSize(mat1,mat1RowSize,mat1ColSize);
+int** comArr2=createCompactArr(mat2,mat2RowSize,mat2ColSize,com2ColSize);
+int** comArr1=createCompactArr(mat1,mat1RowSize,mat1ColSize,com1ColSize);
+int** Result=addSparseMatrix(comArr1,comArr2,com1ColSize,com2ColSize,mat1RowSize,mat1ColSize);
+print(Result,mat2RowSize, mat2ColSize);
 }
