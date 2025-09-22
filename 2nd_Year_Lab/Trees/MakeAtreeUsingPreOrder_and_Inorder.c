@@ -46,3 +46,64 @@ void main(){
     p(root);
     
 }
+
+
+//LEETCODE CODE FOR SAME PROBLEM
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+int i = 0; // Global index to keep track of current root in preorder array
+
+// Function to find the index of a value in inorder using hashmap
+int findIdx(int val, int *hashMap, int offset){
+   return hashMap[val + offset]; // offset handles negative values
+}
+
+// Recursive function to construct the binary tree
+struct TreeNode* makeATree(int *preOrder, int *inOrder, int start, int end, int *hashMap, int offset){
+    if(start > end) 
+        return NULL; // Base case: no elements to construct subtree
+    
+    // Allocate memory for current root node
+    struct TreeNode *root = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    
+    // Assign current root value from preorder
+    root->val = preOrder[i];
+    
+    // Find index of root in inorder array
+    int currIndex = findIdx(root->val, hashMap, offset);
+    
+    i++; // Move to the next root in preorder
+    
+    // Recursively build left subtree
+    root->left = makeATree(preOrder, inOrder, start, currIndex - 1, hashMap, offset);
+   
+    // Recursively build right subtree
+    root->right = makeATree(preOrder, inOrder, currIndex + 1, end, hashMap, offset);
+    
+    return root; // Return the constructed subtree
+}
+
+// Main function to be called by LeetCode
+struct TreeNode* buildTree(int* preorder, int preorderSize, int* inorder, int inorderSize) {
+    i = 0; // Reset global index for each test case
+    
+    int j;
+    int offset = 3000; // Offset to handle negative values
+    int hashMap[6001]; // [-3000, 3000] -> 6001 elements
+    
+    // Fill hashmap: key = value + offset, value = index in inorder
+    for(j = 0; j < inorderSize; j++){
+        hashMap[inorder[j] + offset] = j;
+    }
+    
+    // Construct the tree using recursive function
+    struct TreeNode *root = makeATree(preorder, inorder, 0, preorderSize - 1, hashMap, offset);
+    
+    return root;
+}
