@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_assignment3;
 //2) Program to find no of objects creation out of a class using 'static modifier'
 //Input: No of objects created
 //Output: Display the number of objects created (eg no of objects =3)

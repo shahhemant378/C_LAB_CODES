@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_4_java;
 class Acc{
     int acc_no,balance;
 

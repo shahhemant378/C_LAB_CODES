@@ -342,3 +342,8 @@ public class SJF{
         sc.close();
     }
 }
+
+
+//Optimized code of SJF
+
+

@@ -1,4 +1,4 @@
-package Marketing;
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab7_Package_and_StringHandling.Marketing;
 import General.Employee;
 import java.util.Scanner;
 public class Sales extends Employee{

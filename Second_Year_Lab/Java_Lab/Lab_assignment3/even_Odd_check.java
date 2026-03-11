@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_assignment3;
 //1) Accept 10 numbers from command line and check how many of them are even and how many are odd.
 //input: Enter 10 number from keyboard
 //output: Display number of even and odd number

@@ -1,4 +1,4 @@
-package General;
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab7_Package_and_StringHandling.General;
 
 public class Employee {
    protected int empid;

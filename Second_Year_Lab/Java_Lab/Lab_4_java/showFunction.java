@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_4_java;
 //3. Aim of the program : Write a program in Java having three classes Apple,
 // Banana and Cherry. Class Banana and Cherry are inherited from class Apple
 // and each class have their own member function show() . Using Dynamic Method

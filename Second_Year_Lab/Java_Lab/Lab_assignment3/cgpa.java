@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_assignment3;
 //5) WAP to input and display the details of n number of students having
 //roll,name and cgpa as data members.
 //Also display the name of the student having lowest cgpa.

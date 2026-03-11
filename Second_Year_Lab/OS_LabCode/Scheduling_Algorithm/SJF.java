@@ -1,6 +1,9 @@
+
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -19,9 +22,11 @@ class Node{
         this.bt=bt;
     }
 }
-public class FCFS {
+
+public class SJF {
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+  Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number of processes: ");
         int n = sc.nextInt();
@@ -39,8 +44,8 @@ public class FCFS {
         // Step 1: Sort by Arrival Time
         Arrays.sort(p, Comparator.comparingInt(a -> a.at));
 
-
-        Queue<Node> q=new LinkedList<>();
+        PriorityQueue<Node> q=new PriorityQueue<>((a,b)->a.bt-b.bt);
+        
 
         int completed=0;
         int i=0;

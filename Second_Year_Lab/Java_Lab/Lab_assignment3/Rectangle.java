@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_assignment3;
 //4) Write a program in java to create a class Rectangle 
 //having data members length and breadth and three methods called read,
 //calculate and display to read the values of length and breadth, calculae the

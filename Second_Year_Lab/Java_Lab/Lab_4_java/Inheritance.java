@@ -1,3 +1,4 @@
+package C_LAB_CODES.Second_Year_Lab.Java_Lab.Lab_4_java;
 import java.util.Scanner;
 class plate{
     int length,width;
